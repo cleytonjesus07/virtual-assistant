@@ -3,3 +3,5 @@
 <p>Uma simples animação feita (com o software <a href="https://github.com/DragonBones/DragonBonesJS">Dragonbones</a>) da assistente virtual dos Correios.</p>
 
 <img src="screen.jpg"/>
+
+<a href="https://cleytonjesus07.github.io/virtual-assistant/">Visualizar o projeto</a>
