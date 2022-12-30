@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correios</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            background: linear-gradient(to right top, orange, yellow);
+            height: 100vh;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .container-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            user-select: none;
+
+            font-family: sans-serif;
+            font-size: .8em;
+            background-color: rgb(13, 90, 255);
+            padding: 1em;
+            color: white;
+            border-radius: 1em;
+            margin: 1em 0;
+        }
+
+        .container-title>h1 {
+            font-weight: 100;
+            font-size: 1.5em;
+        }
+
+        .container-title>h1::first-letter {
+            font-weight: bolder;
+            font-size: 1.5em;
+        }
+
+        .container-title img {
+            margin-left: 1em;
+            object-fit: contain;
+            width: 200px;
+            height: auto;
+
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ballon {
+
+            position: relative;
+            user-select: none;
+            background: linear-gradient(to right top, yellow 40%, orange 100%);
+            box-shadow: -2px 2px 0px orange;
+            padding: 2em;
+            margin-bottom: 10px;
+            border-radius: 1em;
+        }
+
+        .ballon>p {
+            max-width: 200px;
+            line-height: 1.3em;
+        }
+
+        .ballon>p::first-letter {
+            font-size: 1.5em;
+            font-weight: bolder;
+            margin-right: .05em;
+        }
+
+        .ballon>button,
+        .ballon>p {
+            font-family: sans-serif;
+            font-weight: 500;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: rgb(13, 90, 255);
+            padding: .3em .5em;
+            color: white;
+            border: solid white 2px;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+
+        .arrow {
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            background-color: yellow;
+            box-shadow: -3px 1px 0px orange;
+            z-index: 2px;
+            bottom: -.7em;
+            right: 3em;
+            transform: skew(0, -30deg);
+        }
+
+        .shadow {
+            padding: .4em 9em;
+            border-radius: 100%;
+            position: absolute;
+            background-color: orangered;
+            bottom: 0px;
+            z-index: -1;
+
+        }
+
+        .container-gif {
+            cursor: pointer;
+            background-image: url("c.gif");
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 130px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-title">
+        <h1>Carol a assistente virtual dos Correios</h1>
+        <a referrerpolicy="no-referrer" href="https://www.correios.com.br/"><img src="./logo.png"></a>
+    </div>
+    <div class="container">
+        <div class="ballon">
+            <button onclick="closeBallon()" type="button" class="close-btn">X</button>
+            <p>Olá, eu me chamo Carol! Em que posso ajudar?</p>
+            <span class="arrow"></span>
+        </div>
+        <div class="container-gif" onclick="openBallon()"></div>
+        <!--  <img  class="gif" src="/c.gif" alt="gif"></video>
+        --> <span class="shadow"></span>
+    </div>
+    <script>
+        const ballon = document.querySelectorAll(".ballon")[0];
+
+        function openBallon() {
+            if (!ballon.style.display == "initial") return;
+
+            ballon.style.display = "initial";
+        }
+
+        function closeBallon() {
+            ballon.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
